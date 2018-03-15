@@ -1,0 +1,5 @@
+- potential topics
+  - bayesian nonparametrics
+
+
+A new Monte Carlo Method for Estimating Marginal Likelihoods (2017)
