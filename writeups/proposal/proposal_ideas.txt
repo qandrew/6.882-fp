@@ -1,0 +1,18 @@
+- potential topics
+  - bayesian nonparametrics
+- work on a real dataset?
+  - bayesian analysis on fake news?
+
+
+A new Monte Carlo Method for Estimating Marginal Likelihoods (2017)
+  - new class of Monte Carlo estimators using single MCMC sample
+
+Bayesian Cluster Analysis: Point Estimation and Credible Balls
+  - Bayesian nonparametric models return posterir over entire space, more statistical properties such as uncertainty on num clusters
+
+Variational HMC via Score Matching
+  - use regularity in param space to construct free-form approx ofo target distribution
+
+Other sources
+  - Bayesian Deep Learning at NIPS 2017: http://bayesiandeeplearning.org/ 
+  - http://bayesiandeeplearning.org/2017/papers/35.pdf Natural Gradient vs Variational Inference

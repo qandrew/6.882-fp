@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{6.882 Proposal: Bayesian Inference on Fake News}
+\author{Andrew Xia, Kelvin Lu, Brandon Zeng}
+\date{March 16 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Pre-Proposal}
+
+For our final project, we are interested in using Bayesian Analysis techniques to better understand how to classify fake news on Twitter data. 
+
+We hope to build upon previous work in this space in our analysis. For example, the Bayesian Echo Chamber \cite{bayes_echo} uses a model that when two people interact, the first person's use of certain words can increase the second person’s probability of subsequently using such word. This in turn can create a model on a social graph to determine which accounts carry more influence, and help us propagate our detection of fake accounts. Another vein of work we can consider, influenced by a recent paper on fake tweets by the Media Lab \cite{medialab}, is to infer the validity of a tweet based on the retweet structure (who retweets, how often, etc.).
+
+\nocite{*}
+\bibliographystyle{amsplain}
+\bibliography{papers}
+
+\end{document}
+
+% References
+% https://web.stanford.edu/class/cs221/2017/restricted/p-final/arjunvb/final.pdf
+% http://proceedings.mlr.press/v38/guo15.pdf bayesian echo chamber
+
+

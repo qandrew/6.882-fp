@@ -1,0 +1,6 @@
+papers
+- https://web.stanford.edu/class/cs221/2017/restricted/p-final/arjunvb/final.pdf
+- Characterizing Political Fake News in Twitter by its Meta-Data
+- Fake News Detection in Social Networks via Crowd Signals
+- Fake News Mitigation via Point Process Based Intervention
+- The Bayesian Echo Chamber: Modeling Social Influence via Linguistic Accommodation
