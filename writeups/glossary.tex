@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Variables}
+
+\begin{itemize}
+    \item $x$ - root tweet
+    \item $v_{0}^{x}$ - root user for that tweet
+    \item $G^{x}(t) = (V^{x}(t), E^{x}(t))$ - retweet graph associated with $x$
+    \item $m^{x}(t)$ - total number of retweets in $G$
+    \item $M^{x}$ - total number of retweets
+    \item $T_{j}^{x}$ - time the user $v_{j}^{x}$ retweets the root tweet
+    \item $S_{j}^{x} = T_{j}^{x} - T_{j}_{P_{j}^{x}}$ - reaction time for user $v_{j}^{x}$ who retweets the root tweet
+    \item $f_{j}^{x}$ - number of followers for user $v_{j}^{x}$
+    \item $d_{j}^{x}$ - distance from the root
+    \item $M_{j}^{x}$ - number of followers who subsequently retweet $v_{j}^{x}$'s tweet
+    \begin{itemize}
+        \item $\alpha^x$ tweet specific mean
+        \item $\tau^x$ tweet specific standard dev
+    \end{itemize}
+    \item $b_{j}^{x}$ - follower's retweet probability for $v_{j}^{x}$
+    \item 
+    \item $\Phi$ - global parameters shared between tweets:
+        \begin{itemize}
+            \item $\alpha \sim \mathcal{N}(\mu_\alpha, \sigma_\alpha^2$
+            \item $\sigma_\delta^2 \sim IG(a_\delta, b_\delta)$
+            \item $\log(a_\tau) \sim N$
+            \item $\beta_0 \sim \mathcal{N}(\mu_{\beta_0}, \sigma_{\beta_0}^2)$
+            \item $\beta_f \sim \mathcal{N}(\mu_{\beta_f}, \sigma_{\beta_f}^2)$
+            \item $\beta_d \sim \mathcal{N}(\mu_{\beta_d}, \sigma_{\beta_d}^2)$
+            \item $\sigma_b^2 \sim IG(a_{\sigma_b}, b_{\sigma_b})$
+        \end{itemize}
+\end{itemize}
+
+
+\end{document}
+

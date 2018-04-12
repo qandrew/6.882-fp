@@ -1,28 +1,87 @@
-\documentclass{article}
+\documentclass[runningheads]{article}
 \usepackage[utf8]{inputenc}
 
-\title{6.882 Proposal: Bayesian Inference on Fake News}
+\title{6.882 Proposal: Bayesian Inference on Popularity}
 \author{Andrew Xia, Kelvin Lu, Brandon Zeng}
-\date{March 16 2018}
+\date{March 23 2018}
 
 \begin{document}
 
 \maketitle
 
-\section{Project Pre-Proposal}
+\section{Project Proposal}
 
-For our final project, we are interested in using Bayesian Analysis techniques to better understand how to classify fake news on Twitter data. 
+For our final project, we are interested in using Bayesian Analysis techniques to better understand how to predict tweet popularity from existing Twitter data. 
 
-We hope to build upon previous work in this space in our analysis. For example, the Bayesian Echo Chamber \cite{bayes_echo} uses a model that when two people interact, the first person's use of certain words can increase the second person’s probability of subsequently using such word. This in turn can create a model on a social graph to determine which accounts carry more influence, and help us propagate our detection of fake accounts. Another vein of work we can consider, influenced by a recent paper on fake tweets by the Media Lab \cite{medialab}, is to infer the validity of a tweet based on the retweet structure (who retweets, how often, etc.).
+We plan on implementing a paper by Zaman et al \cite{popularity} which details a Bayesian approach for predicting the popularity of tweets, in which the popularity of a tweet is defined as the number of retweets it receives. The paper analyzes a tweet and examines properties of the retweet graph, such as the depth, the time delay between retweets, in addition to properties of the user (number of followers, etc) to create a generative model of the probability that a tweet will be retweeted. 
+
+Our main priority is to replicate the model with the data provided in \cite{popularity}. In addition, the dataset in \cite{medialab} contains over 120,000 tweets and their subsequent retweet graph, classified on whether the original tweet was "real" or "fake" news\footnote{Fake news is a feature that we initially won't be examining but it could also be an interesting feature to encorporate!}.
+
+% The paper uses MCMC
+
+If time permits, we also hope to augment the model presented in \cite{popularity} by including additional features such as the time of day of the tweet. One deficiency in \cite{popularity} is that the model doesn't incorporate the actual text in the tweet as a feature. We hope to include text as a feature to our model, using models such as TF-IDF or word2vec. Finally, analyzing the popularity and spread of tweets may not be based on a single tweet; in fact, multiple tweets (such as trending topics) may affect the spread of a tweet. We can look at hashtags within a tweet to determine correlation between tweets in our model.
+
+\section{Plan and Deadlines}
+
+% \subsection{Steps}
+
+We plan to take the following steps to complete our project, as detailed in the following timeline:
+
+% Firstly, we will
+
+% Next, we will
+
+% Finally, we will
+
+% \subsection{Timeline}
+
+\begin{enumerate}
+    \item Week of 3/26 (Spring Break): we plan on spending more time conducting background reading and exploring more papers to impwlement.
+    \item Week of 4/2 Complete explaratory data analysis to familiarize ourselves with the dataset (i.e., tweets, retweet graphs, reaction times). Implement generative model for retweet graph evolution.
+    \item Week of 4/9: Submit Progress Report. Implement log-normal model for reaction times and bionomial model for retweet graph structure. 
+    \item Week of 4/16 Combine the models into an overall graphical log-normal-binomial model for the evolution of retweet graphs.
+    \item Week of 4/23 Implement the posterior distribution, and sample using MCMC.
+    \item Week of 4/30 Evaluate our model using absolute percent error between predicted and actual tweets. As a baseline, we can compare against a regression model that uses tweet counts.
+    \item Week of 5/7: Write the project paper and submit.
+    
+\end{enumerate}
+
+\section{Division of Labour}
+
+For this project, we will be working on separate portions of the model concurrently (e.g. one person will implement the log-normal portions of the model and another person will implement the binomial model portions). All of our code will be available and public at \texttt{https://github.com/qandrew/6.882-fp}. Data collection, sampling, and writing the final report will be done collaboratively.
+
+\section{Project Risks}
+
+One major risk to the progress of our project is our speed of implementation. If implementing the hierarchical graphical model becomes time-consuming, we will consult references online on implementing MCMC samplers, etc.
+
+While we have already located our data, finding additional data to test our model may also become problematic. The datasets from \cite{medialab, popularity} are formatted differently, so data processing may be time consuming. If we are sparse on time, we will focus on implementing our model on the data from \cite{popularity} first.
 
 \nocite{*}
 \bibliographystyle{amsplain}
 \bibliography{papers}
 
+\section*{Appendix}
+
+\subsection*{Pre-Proposal}
+
+We initially focused on applying Bayesian inference on the spread of fake news on Twitter data, in which our current project is a generalized approach to this problem space. Our pre-proposal is available below for reference (although not directly relevant).
+
+We hope to build upon previous work in this space in our analysis. For example, the Bayesian Echo Chamber \cite{bayes_echo} uses a model that when two people interact, the first person's use of certain words can increase the second person’s probability of subsequently using such word. This in turn can create a model on a social graph to determine which accounts carry more influence, and help us propagate our detection of fake accounts. Another vein of work we can consider, influenced by a recent paper on fake tweets by the Media Lab \cite{medialab}, is to infer the validity of a tweet based on the retweet structure (who retweets, how often, etc.).
+
 \end{document}
+
+For the proposal, I'll be looking for a lot more concreteness. Will
+you be replicating these papers? If so, exactly what are the steps you
+will take to do so? What models, inference techniques, and evaluations
+will you conduct? What data will you use?
+
+% Notes
+% * Develop a clear timeline with intermediate, well-defined steps for each individual in the group
+% * Be specific about how you will validate your work (how will you check any code vs your model choices applied to particular data)
 
 % References
 % https://web.stanford.edu/class/cs221/2017/restricted/p-final/arjunvb/final.pdf
 % http://proceedings.mlr.press/v38/guo15.pdf bayesian echo chamber
+
 
 
